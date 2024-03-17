@@ -56,7 +56,6 @@ function customscrollbar() {
 }
 customscrollbar();
 
-
 function horizontalScrollbar() {
     let horizontalSection = document.querySelector('.workes-container');
     gsap.to('.workes-container', {
@@ -69,12 +68,11 @@ function horizontalScrollbar() {
             pin: true,
             scrub: true,
             invalidateOnRefresh: true,
-            // markers: true
+            markers: true
         }
     });
 }
-// horizontalScrollbar()
-
+horizontalScrollbar()
 
 function navbar() {
     let hamburgerIcon = document.querySelector(".hamburger-icon");
@@ -86,43 +84,45 @@ function navbar() {
 
 navbar();
 
+gsap.from(".hero-title h1", {
+    y: 120,
+    opacity: 0,
+    duration: 0.9,
+    stagger: 0.5,
+})
+
+gsap.from(".hero-title p", {
+    scale: 0.5,
+    duration: 0.9,
+    opacity: 0,
+
+})
+
+function loadingAnimation() {
+    var tl = gsap.timeline();
+    tl.to(".loader", {
+        top: "-100%",
+        delay: 0.5,
+        duration: 0.6,
+        ease: "expo.out"
+
+    })
+    tl.from(".center-div h1 span", {
+        scale: 0.5,
+        x: -50,
+        y: 50,
+        stagger: 0.3,
+        opacity: 0.7,
+        duration: 0.5,
+    })
 
 
 
-// let workesSection = document.querySelector(".workes-section");
-// console.log(workesSection)
+    tl.to(".loader", {
+        opacity: 0,
+        display: "none",
+        duration: 0.9,
+    })
+}
+loadingAnimation()
 
-// gsap.registerPlugin(ScrollTrigger);
-// const container = document.querySelector(".workes-section")
-
-// gsap.timeline({
-//     scrollTrigger: {
-//         trigger: container,
-//         start: "top 50%",
-//         end: "bottom 20%",
-//         toggleActions: "restart none none reverse",
-//         scrub: true,
-//         markers: true,
-//     }
-// })
-//     .to(container, {
-//         scale: 1.3,
-//     })
-
-
-
-// gsap.registerPlugin(ScrollTrigger);
-const container = document.querySelector(".workes-section");
-
-gsap.to(container, {
-    width: "100%", // Target width
-    duration: 0.5, // Animation duration
-    scrollTrigger: {
-        trigger: container,
-        start: "top 50%", // Start point of the trigger
-        end: "bottom 20%", // End point of the trigger
-        toggleActions: "restart none none reverse", // Toggle actions
-        scrub: true, // Enable scrubbing for smooth scrolling
-        markers: true // Show markers for debugging
-    }
-});
