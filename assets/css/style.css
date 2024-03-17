@@ -84,9 +84,9 @@ ul:hover .line-two {
     height: 100vh;
     background-color: var(--bg-primary-color);
     font-family: Manrope-Medium;
-    display: flex;
+    /* display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: flex-start; */
     position: relative;
 }
 
@@ -145,10 +145,10 @@ ul:hover .line-two {
 .workes-section {
     font-family: DM-Sans-Regular;
     overflow: hidden;
-    width: 86%;
+    width: 80% ;
     background-color: rgb(122, 114, 114);
     border-radius: 15px;
-    position: relative;
+    /* position: absolute; */
 }
 
 .workes-slider {
