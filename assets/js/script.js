@@ -91,7 +91,7 @@ gsap.from(".hero-title h1", {
     stagger: 0.5,
 })
 
-gsap.from(".hero-title p", {
+gsap.from(".hero-title .text-white", {
     scale: 0.5,
     duration: 0.9,
     opacity: 0,
